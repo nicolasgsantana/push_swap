@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:04:23 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/13 13:07:11 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/13 13:15:46 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static int	ft_isspace(int c)
 
 long	ft_atol(const char *nptr)
 {
-	int		i;
-	int		sign;
+	int			i;
+	int			sign;
 	long long	result;
 
 	i = 0;
