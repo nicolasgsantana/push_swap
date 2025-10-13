@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:03:19 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/09 16:04:06 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/13 13:07:46 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+
+long	ft_atol(const char *nptr);
 
 #endif
