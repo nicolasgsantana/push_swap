@@ -13,7 +13,7 @@ LIBS = $(LIBFT)
 
 SRC = src/main.c src/ft_atol.c src/validation.c src/utils.c src/parse.c
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-HEADER = $(INC_DIR)/push_swap.h
+HEADER = inc/push_swap.h inc/validation.h
 
 all: $(NAME)
 
