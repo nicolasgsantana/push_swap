@@ -11,7 +11,7 @@ CFLAGS = -Wall -Wextra -Werror
 INCLUDES = -I$(INC_DIR) -I$(LIBFT_DIR)/include
 LIBS = $(LIBFT)
 
-SRC = src/main.c src/ft_atol.c src/validate.c
+SRC = src/main.c src/ft_atol.c src/validate.c src/utils.c
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 HEADER = $(INC_DIR)/push_swap.h
 
