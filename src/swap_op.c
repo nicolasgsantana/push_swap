@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:06:03 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/15 13:20:59 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/15 13:27:17 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	swap(t_list **stack)
 {
 	t_list	*tmp;
 
-	if (!*stack || !(*stack) -> next)
+	if (ft_lstsize(*stack) < 2)
 		return ;
 	tmp = (*stack) -> next;
 	(*stack) -> next = tmp -> next;
