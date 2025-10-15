@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 13:23:23 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/15 13:54:40 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:58:58 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static void	rotate(t_list **stack)
 	if (ft_lstsize(*stack) < 2)
 		return ;
 	first_node = *stack;
-	*stack = (*stack) -> next;
-	first_node -> next = NULL;
+	*stack = (*stack)->next;
+	first_node->next = NULL;
 	last_node = *stack;
-	while(last_node -> next)
-		last_node = last_node -> next;
-	last_node -> next = first_node;
+	while (last_node->next)
+		last_node = last_node->next;
+	last_node->next = first_node;
 }
 
 void	ra(t_list **stack_a)

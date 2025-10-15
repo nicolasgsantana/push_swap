@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:08:49 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/15 12:50:55 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:56:08 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	pa(t_list **stack_a, t_list **stack_b)
 
 	if (!*stack_b)
 		return ;
-	next_b = (*stack_b) -> next;
+	next_b = (*stack_b)->next;
 	if (!*stack_a)
 	{
 		ft_lstadd_front(stack_a, *stack_b);
-		(*stack_a) -> next = NULL;
+		(*stack_a)->next = NULL;
 	}
 	else
 		ft_lstadd_front(stack_a, *stack_b);
@@ -36,11 +36,11 @@ void	pb(t_list **stack_a, t_list **stack_b)
 
 	if (!*stack_a)
 		return ;
-	next_a = (*stack_a) -> next;
+	next_a = (*stack_a)->next;
 	if (!*stack_b)
 	{
 		ft_lstadd_front(stack_b, *stack_a);
-		(*stack_b) -> next = NULL;
+		(*stack_b)->next = NULL;
 	}
 	else
 		ft_lstadd_front(stack_b, *stack_a);
