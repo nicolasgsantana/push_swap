@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:04:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/14 15:46:51 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/15 10:29:08 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,19 @@ int	error(void)
 
 int	main(int argc, char **argv)
 {
+	t_list	*stack_a;
+
+	stack_a = NULL;
 	if (argc >= 2)
 	{
 		if (!is_input_valid(argc, argv))
 			return (error());
-		ft_printf("Input is valid\n");
+		init_stack(argc, argv, &stack_a);
+		while (stack_a)
+		{
+			ft_printf("%d\n", (*(int *)stack_a -> content));
+			stack_a = stack_a -> next;
+		}
 	}
 	return (0);
 }
