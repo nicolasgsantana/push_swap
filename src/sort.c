@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 16:04:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/20 16:22:31 by nde-sant         ###   ########.fr       */
+/*   Created: 2025/10/20 15:28:26 by nde-sant          #+#    #+#             */
+/*   Updated: 2025/10/20 16:22:11 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	error(void)
+void	sort(t_list **stack_a, t_list **stack_b)
 {
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	return (1);
-}
-
-int	main(int argc, char **argv)
-{
-	t_list	*stack_a;
-	t_list	*stack_b;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc >= 2)
-	{
-		if (!is_input_valid(argc, argv))
-			return (error());
-		init_stack(argc, argv, &stack_a);
-		//print_stacks(stack_a, stack_b);
-		if(!is_sorted(stack_a))
-			sort(&stack_a, &stack_b);
-		//print_stacks(stack_a, stack_b);
-	}
-	return (0);
+	if (ft_lstsize(*stack_a) == 2)
+		sa(stack_a);
+	else if (ft_lstsize(*stack_a) == 3)
+		sort_three(stack_a);
+	else
+		(void)stack_b;	
 }

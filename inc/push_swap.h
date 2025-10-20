@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:03:19 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/20 14:51:10 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/20 16:24:29 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
 int		is_sorted(t_list *stack);
-int	find_index(t_list *stack, int value);
+int		find_index(t_list *stack, int value);
 void	sort_three(t_list **stack_a);
+void	sort(t_list **stack_a, t_list **stack_b);
 
 // FOR DEBUGGING ONLY
 // TO BE REMOVED BEFORE EVALUATIONS
