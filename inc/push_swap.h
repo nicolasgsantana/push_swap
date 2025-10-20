@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:03:19 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/15 15:39:12 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/20 10:38:48 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,10 @@ void	rr(t_list **stack_a, t_list **stack_b);
 void	rra(t_list **stack_a);
 void	rrb(t_list **stack_b);
 void	rrr(t_list **stack_a, t_list **stack_b);
+
+// FOR DEBUGGING ONLY
+// TO BE REMOVED BEFORE EVALUATIONS
+// REMEMBER TO REMOVE FROM MAKEFILE TOO
+void	print_stacks(t_list *stack_a, t_list *stack_b);
 
 #endif

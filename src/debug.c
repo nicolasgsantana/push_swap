@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   debug.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 16:04:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/20 10:35:47 by nde-sant         ###   ########.fr       */
+/*   Created: 2025/10/20 10:35:29 by nde-sant          #+#    #+#             */
+/*   Updated: 2025/10/20 10:38:03 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	error(void)
+void	print_stacks(t_list *stack_a, t_list *stack_b)
 {
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	return (1);
-}
+	t_list	*tmp_a;
+	t_list	*tmp_b;
+	int		nb_a;
+	int		nb_b;
 
-int	main(int argc, char **argv)
-{
-	t_list	*stack_a;
-	t_list	*stack_b;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc >= 2)
+	tmp_a = stack_a;
+	tmp_b = stack_b;
+	nb_a = 0;
+	nb_b = 0;
+	ft_printf("Stack\nA |B \n");
+	while (tmp_a || tmp_b)
 	{
-		if (!is_input_valid(argc, argv))
-			return (error());
-		init_stack(argc, argv, &stack_a);
-		print_stacks(stack_a, stack_b);
-		rra(&stack_a);
-		rra(&stack_a);
-		rra(&stack_a);
-		print_stacks(stack_a, stack_b);
+		if (tmp_a)
+		{
+			nb_a = *(int *)tmp_a -> content;
+			tmp_a = tmp_a -> next;
+		}
+		if (tmp_b)
+		{
+			nb_b = *(int *)tmp_b -> content;
+			tmp_b = tmp_b -> next;
+		}
+		ft_printf("%d  %d\n", nb_a, nb_b);
 	}
-	return (0);
 }
