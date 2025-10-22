@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:03:19 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/20 16:24:29 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:15:55 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ int		is_sorted(t_list *stack);
 int		find_index(t_list *stack, int value);
 void	sort_three(t_list **stack_a);
 void	sort(t_list **stack_a, t_list **stack_b);
+int		get_max(t_list *stack);
+int		get_min(t_list *stack);
+int		ft_abs(int n);
+int		ft_abs_diff(int n1, int n2);
 
 // FOR DEBUGGING ONLY
 // TO BE REMOVED BEFORE EVALUATIONS
