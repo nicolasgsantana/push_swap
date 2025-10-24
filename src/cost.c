@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:35:11 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/22 17:16:52 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/24 14:42:24 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	find_closest_lower(int item, t_list *stack)
 	{
 		n = *(int *)tmp->content;
 		if (n < item)
-			if (ft_abs_diff(n, item) < ft_abs_diff(closest, item))
+			if (ft_abs(n - item) < ft_abs(closest - item))
 				closest = n;
 		tmp = tmp->next;
 	}
@@ -46,7 +46,7 @@ int	find_closest_higher(int item, t_list *stack)
 	{
 		n = *(int *)tmp->content;
 		if (n > item)
-			if (ft_abs_diff(n, item) < ft_abs_diff(closest, item))
+			if (ft_abs(n - item) < ft_abs(closest - item))
 				closest = n;
 		tmp = tmp->next;
 	}
@@ -73,13 +73,23 @@ int	get_lowest_cost_item(t_list *stack_a, t_list *stack_b)
 	int		n;
 	int		cost_a;
 	int		cost_b;
+	int		total_cost;
+	int		current_lowest;
 
-	lowest_cost_item = INT_MAX;
+	current_lowest = INT_MAX;
 	tmp_a = stack_a;
 	while (tmp_a)
 	{
 		n = *(int *)tmp_a->content;
 		cost_a = cost_to_top(n, stack_a);
 		cost_b = cost_to_top(find_closest_lower(n, stack_b), stack_b);
+		total_cost = ft_abs(cost_a) + ft_abs(cost_b) + 1;
+		if (total_cost < current_lowest)
+		{
+			current_lowest = total_cost;
+			lowest_cost_item = n;
+		}
+		tmp_a = tmp_a->next;
 	}
+	return (lowest_cost_item);
 }
