@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:03:19 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/27 11:34:00 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:24:44 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	sort(t_list **stack_a, t_list **stack_b);
 int		get_max(t_list *stack);
 int		get_min(t_list *stack);
 int		ft_abs(int n);
+int		ft_max(int n1, int n2);
+int		ft_min(int n1, int n2);
 int		find_closest_lower(int item, t_list *stack);
 int		find_closest_higher(int item, t_list *stack);
 int		cost_to_top(int item, t_list *stack);
