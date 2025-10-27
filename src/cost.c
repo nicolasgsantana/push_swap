@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:35:11 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/24 14:42:24 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:31:14 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@ int	find_closest_lower(int item, t_list *stack)
 	if (item < get_min(stack))
 		return (get_max(stack));
 	tmp = stack;
-	closest = *(int *)tmp->content;
+	closest = INT_MIN;
 	while(tmp)
 	{
 		n = *(int *)tmp->content;
-		if (n < item)
-			if (ft_abs(n - item) < ft_abs(closest - item))
+		if (n < item && n > closest)
 				closest = n;
 		tmp = tmp->next;
 	}
@@ -38,15 +37,15 @@ int	find_closest_higher(int item, t_list *stack)
 	t_list	*tmp;
 	int		closest;
 	int		n;
+
 	if (item > get_max(stack))
 		return (get_min(stack));
 	tmp = stack;
-	closest = *(int *)tmp->content;
+	closest = INT_MAX;
 	while (tmp)
 	{
 		n = *(int *)tmp->content;
-		if (n > item)
-			if (ft_abs(n - item) < ft_abs(closest - item))
+		if (n > item && n < closest)
 				closest = n;
 		tmp = tmp->next;
 	}
@@ -59,6 +58,8 @@ int	cost_to_top(int item, t_list *stack)
 	int	stack_size;
 
 	index = find_index(stack, item);
+	if (index == -1)
+		return (INT_MAX);
 	stack_size = ft_lstsize(stack);
 	if (index > (stack_size / 2))
 		return (index - stack_size);
@@ -83,7 +84,12 @@ int	get_lowest_cost_item(t_list *stack_a, t_list *stack_b)
 		n = *(int *)tmp_a->content;
 		cost_a = cost_to_top(n, stack_a);
 		cost_b = cost_to_top(find_closest_lower(n, stack_b), stack_b);
-		total_cost = ft_abs(cost_a) + ft_abs(cost_b) + 1;
+		if (cost_a > 0 && cost_b > 0)
+			total_cost = ft_max(cost_a, cost_b);
+		else if (cost_a < 0 && cost_b < 0)
+			total_cost = ft_abs(ft_min(cost_a, cost_b));
+		else
+			total_cost = ft_abs(cost_a) + ft_abs(cost_b) + 1;
 		if (total_cost < current_lowest)
 		{
 			current_lowest = total_cost;
