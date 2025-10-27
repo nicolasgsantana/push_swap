@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:03:19 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/24 17:21:59 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:34:00 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,5 @@ int		find_closest_lower(int item, t_list *stack);
 int		find_closest_higher(int item, t_list *stack);
 int		cost_to_top(int item, t_list *stack);
 int		get_lowest_cost_item(t_list *stack_a, t_list *stack_b);
-
-// FOR DEBUGGING ONLY
-// TO BE REMOVED BEFORE EVALUATIONS
-// REMEMBER TO REMOVE FROM MAKEFILE TOO
-void	print_stacks(t_list *stack_a, t_list *stack_b);
 
 #endif
