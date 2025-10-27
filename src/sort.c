@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:28:26 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/27 10:39:57 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:54:39 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ void	sort_big(t_list **stack_a, t_list **stack_b)
 		else
 			to_stack_b(stack_a, stack_b, item);
 	}
-	sort_three(stack_a);
+	if (!is_sorted(*stack_a))
+		sort_three(stack_a);
 	while (ft_lstsize(*stack_b))
 	{
 		item = find_closest_higher(*(int *)(*stack_b)->content, *stack_a);
@@ -71,6 +72,8 @@ void	sort_big(t_list **stack_a, t_list **stack_b)
 		else
 			rot_stacks(stack_a, stack_b, cost_to_top(item, *stack_a), 0);
 	}
+	item = get_min(*stack_a);
+	rot_stacks(stack_a, stack_b, cost_to_top(item, *stack_a), 0);
 }
 
 void	sort(t_list **stack_a, t_list **stack_b)
