@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:50:46 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/14 16:21:57 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:38:05 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	is_string_valid(char *str)
 			;
 		else if (ft_issign(str[i]))
 		{
-			if (i == 0)
+			if (i == 0 && ft_isdigit(str[i + 1]))
 				;
-			else if (str[i - 1] == ' ')
+			else if (str[i - 1] == ' ' && ft_isdigit(str[i + 1]))
 				;
 			else
 				return (0);
@@ -48,19 +48,16 @@ int	is_there_a_duplicate(char **array)
 {
 	int		i;
 	int		j;
-	size_t	len_i;
 
 	i = 0;
 	j = 0;
 	while (array[i])
 	{
-		len_i = ft_strlen(array[i]);
 		j = i + 1;
 		while (array[j])
 		{
-			if (len_i == ft_strlen(array[j]))
-				if (!ft_strncmp(array[i], array[j], len_i))
-					return (1);
+			if (ft_atoi(array[i]) == ft_atoi(array[j]))
+				return (1);
 			j++;
 		}
 		i++;
@@ -87,10 +84,12 @@ int	is_input_valid(int argc, char **argv)
 	int		i;
 	char	**inputs;
 
-	if (argc == 2)
+	if (argc == 2 && argv[1][0])
 		inputs = ft_split(argv[1], ' ');
 	else if (argc > 2)
 		inputs = ++argv;
+	else
+		return (0);
 	i = 0;
 	while (inputs[i])
 	{
