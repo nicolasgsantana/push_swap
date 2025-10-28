@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:04:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/27 11:32:57 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:49:54 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		if (!is_input_valid(argc, argv))
 			return (error());
 		init_stack(argc, argv, &stack_a);
-		if(!is_sorted(stack_a))
+		if (!is_sorted(stack_a))
 			sort(&stack_a, &stack_b);
 	}
 	return (0);

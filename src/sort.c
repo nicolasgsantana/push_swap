@@ -6,48 +6,45 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:28:26 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/28 11:22:04 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/28 12:52:04 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rot_stacks(t_list **stack_a, t_list **stack_b, int cost_a, int cost_b)
+void	do_op_cost(t_list **stack, int *cost, void (*op)(t_list **))
 {
-	while (cost_a != 0 || cost_b != 0)
+	if (*cost > 0)
+		*cost -= 1;
+	else
+		*cost += 1;
+	op(stack);
+}
+
+void	rot_stacks(t_list **stack_a, t_list **stack_b, int ca, int cb)
+{
+	while (ca != 0 || cb != 0)
 	{
-		if (cost_a > 0 && cost_b > 0)
+		if (ca > 0 && cb > 0)
 		{
 			rr(stack_a, stack_b);
-			cost_a--;
-			cost_b--;
+			ca--;
+			cb--;
 		}
-		else if (cost_a < 0 && cost_b < 0)
+		else if (ca < 0 && cb < 0)
 		{
 			rrr(stack_a, stack_b);
-			cost_a++;
-			cost_b++;
+			ca++;
+			cb++;
 		}
-		else if (cost_a > 0)
-		{
-			ra(stack_a);
-			cost_a--;
-		}
-		else if (cost_a < 0)
-		{
-			rra(stack_a);
-			cost_a++;
-		}
-		else if (cost_b > 0)
-		{
-			rb(stack_b);
-			cost_b--;
-		}
-		else if (cost_b < 0)
-		{
-			rrb(stack_b);
-			cost_b++;
-		}
+		else if (ca > 0)
+			do_op_cost(stack_a, &ca, ra);
+		else if (ca < 0)
+			do_op_cost(stack_a, &ca, rra);
+		else if (cb > 0)
+			do_op_cost(stack_b, &cb, rb);
+		else
+			do_op_cost(stack_b, &cb, rrb);
 	}
 }
 

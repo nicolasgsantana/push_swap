@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:54:09 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/20 15:12:23 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:49:10 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	is_sorted(t_list *stack)
 	t_list	*tmp;
 	int		current_val;
 	int		next_val;
-	
+
 	tmp = stack;
 	while (tmp->next)
 	{
@@ -65,11 +65,12 @@ int	is_sorted(t_list *stack)
 	}
 	return (1);
 }
+
 int	find_index(t_list *stack, int value)
 {
 	t_list	*tmp;
-	int	index;
-	int	i;
+	int		index;
+	int		i;
 
 	tmp = stack;
 	index = -1;
