@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:55:40 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/29 16:21:06 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:07:32 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int is_op_valid(char *input)
 	{
 		if (!ft_strncmp(input, "pa\n", 3) || !ft_strncmp(input, "pb\n", 3))
 			return (1);
-		else if (!ft_strncmp(input, "sa\n", 3) || !ft_strncmp(input, "sb\n", 3))
+		if (!ft_strncmp(input, "sa\n", 3) || !ft_strncmp(input, "sb\n", 3))
 			return (1);
-		else if (!ft_strncmp(input, "ra\n", 3) || !ft_strncmp(input, "rb\n", 3))
+		if (!ft_strncmp(input, "ra\n", 3) || !ft_strncmp(input, "rb\n", 3))
 			return (1);
-		else if (!ft_strncmp(input, "rr\n", 3) || !ft_strncmp(input, "ss\n", 3))
+		if (!ft_strncmp(input, "rr\n", 3) || !ft_strncmp(input, "ss\n", 3))
 			return (1);
 		else
 			return (0);
@@ -48,10 +48,12 @@ int is_op_valid(char *input)
 
 int	is_command_valid(char *input)
 {
-	char *last_newline = ft_strrchr(input, '\n');
+	char	*last_newline;
+	
+	last_newline = ft_strrchr(input, '\n');
 	if (!last_newline)
-		return 0;
-	return is_op_valid(last_newline - (last_newline != input ? 0 : 1));
+		return (0);
+	return (is_op_valid(last_newline));
 }
 
 char	**read_input(void)
