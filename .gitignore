@@ -1,6 +1,7 @@
 # compiled files
 *.o
 push_swap
+checker
 
 # vscode config
 .vscode
