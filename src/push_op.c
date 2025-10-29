@@ -6,13 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:08:49 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/15 15:56:08 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/29 11:15:11 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_list **stack_a, t_list **stack_b)
+void	pa(t_list **stack_a, t_list **stack_b, int print)
 {
 	t_list	*next_b;
 
@@ -27,10 +27,11 @@ void	pa(t_list **stack_a, t_list **stack_b)
 	else
 		ft_lstadd_front(stack_a, *stack_b);
 	*stack_b = next_b;
-	ft_printf("pa\n");
+	if (print)
+		ft_printf("pa\n");
 }
 
-void	pb(t_list **stack_a, t_list **stack_b)
+void	pb(t_list **stack_a, t_list **stack_b, int print)
 {
 	t_list	*next_a;
 
@@ -45,5 +46,6 @@ void	pb(t_list **stack_a, t_list **stack_b)
 	else
 		ft_lstadd_front(stack_b, *stack_a);
 	*stack_a = next_a;
-	ft_printf("pb\n");
+	if (print)
+		ft_printf("pb\n");
 }

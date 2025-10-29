@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 15:02:46 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/15 15:58:49 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/29 11:16:16 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,24 @@ static void	reverse_rotate(t_list **stack)
 	*stack = last_node;
 }
 
-void	rra(t_list **stack_a)
+void	rra(t_list **stack_a, int print)
 {
 	reverse_rotate(stack_a);
-	ft_printf("rra\n");
+	if (print)
+		ft_printf("rra\n");
 }
 
-void	rrb(t_list **stack_b)
+void	rrb(t_list **stack_b, int print)
 {
 	reverse_rotate(stack_b);
-	ft_printf("rrb\n");
+	if (print)
+		ft_printf("rrb\n");
 }
 
-void	rrr(t_list **stack_a, t_list **stack_b)
+void	rrr(t_list **stack_a, t_list **stack_b, int print)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	ft_printf("rrr\n");
+	if (print)
+		ft_printf("rrr\n");
 }

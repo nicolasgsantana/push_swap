@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 10:54:09 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/28 11:49:10 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/29 11:19:06 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,20 +92,20 @@ void	sort_three(t_list **stack_a)
 {
 	if (get_min(*stack_a) == *(int *)(*stack_a)->content)
 	{
-		rra(stack_a);
-		sa(stack_a);
+		rra(stack_a, 1);
+		sa(stack_a, 1);
 	}
 	else if (get_max(*stack_a) == *(int *)(*stack_a)->content)
 	{
-		ra(stack_a);
+		ra(stack_a, 1);
 		if (!is_sorted(*stack_a))
-			sa(stack_a);
+			sa(stack_a, 1);
 	}
 	else
 	{
 		if (find_index(*stack_a, get_min(*stack_a)) == 1)
-			sa(stack_a);
+			sa(stack_a, 1);
 		else
-			rra(stack_a);
+			rra(stack_a, 1);
 	}
 }

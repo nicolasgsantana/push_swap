@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 11:06:03 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/15 15:57:29 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/29 11:17:35 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,24 @@ static void	swap(t_list **stack)
 	*stack = tmp;
 }
 
-void	sa(t_list **stack_a)
+void	sa(t_list **stack_a, int print)
 {
 	swap(stack_a);
-	ft_printf("sa\n");
+	if (print)
+		ft_printf("sa\n");
 }
 
-void	sb(t_list **stack_b)
+void	sb(t_list **stack_b, int print)
 {
 	swap(stack_b);
-	ft_printf("sb\n");
+	if (print)
+		ft_printf("sb\n");
 }
 
-void	ss(t_list **stack_a, t_list **stack_b)
+void	ss(t_list **stack_a, t_list **stack_b, int print)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_printf("ss\n");
+	if (print)
+		ft_printf("ss\n");
 }
