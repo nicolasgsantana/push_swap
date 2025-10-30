@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:55:40 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/29 17:07:32 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/30 11:06:50 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,17 @@ int is_op_valid(char *input)
 
 int	is_command_valid(char *input)
 {
-	char	*last_newline;
-	
-	last_newline = ft_strrchr(input, '\n');
-	if (!last_newline)
-		return (0);
-	return (is_op_valid(last_newline));
+	int	len;
+
+	len = 0;
+	while (*input)
+	{
+		len++;
+		if (*input == '\n' && *(input + 1))
+			len = 0;
+		input++;
+	}
+	return (is_op_valid(input - len));
 }
 
 char	**read_input(void)
