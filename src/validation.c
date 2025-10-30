@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:50:46 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/30 14:28:42 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:00:07 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	is_string_valid(char *str)
 	int	i;
 
 	i = 0;
+	if (!str[i])
+		return (0);
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]))
