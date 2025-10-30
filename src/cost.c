@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 16:35:11 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/28 12:06:38 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/30 14:43:55 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	find_closest_lower(int item, t_list *stack)
 	{
 		n = *(int *)tmp->content;
 		if (n < item && n > closest)
-				closest = n;
+			closest = n;
 		tmp = tmp->next;
 	}
 	return (closest);
@@ -46,7 +46,7 @@ int	find_closest_higher(int item, t_list *stack)
 	{
 		n = *(int *)tmp->content;
 		if (n > item && n < closest)
-				closest = n;
+			closest = n;
 		tmp = tmp->next;
 	}
 	return (closest);

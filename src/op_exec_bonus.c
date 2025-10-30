@@ -6,13 +6,13 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:39:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/30 13:49:18 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/30 14:38:19 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-static void exec_op(char *op, t_list **stack_a, t_list **stack_b)
+static void	exec_op(char *op, t_list **stack_a, t_list **stack_b)
 {
 	if (!ft_strncmp(op, "rra", 4))
 		rra(stack_a, 0);
@@ -40,10 +40,10 @@ static void exec_op(char *op, t_list **stack_a, t_list **stack_b)
 
 void	execute_operations(char **commands, t_list **stack_a, t_list **stack_b)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(commands[i])
+	while (commands[i])
 	{
 		exec_op(commands[i], stack_a, stack_b);
 		i++;

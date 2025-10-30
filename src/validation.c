@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 15:50:46 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/28 13:38:05 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/30 14:28:42 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,8 @@ int	is_there_a_duplicate(char **array)
 
 static int	free_matrix_return(char **matrix, int argc, int return_value)
 {
-	int	i;
-
 	if (argc == 2)
-	{
-		i = 0;
-		while (matrix[i])
-			free(matrix[i++]);
-		free(matrix);
-	}
+		free_matrix(matrix);
 	return (return_value);
 }
 

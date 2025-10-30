@@ -20,7 +20,8 @@ LIBS = $(LIBFT)
 
 SRC = src/push_swap.c src/ft_atol.c src/validation.c src/utils.c \
 src/parse.c src/push_op.c src/swap_op.c src/rotate_op.c \
-src/rev_rotate_op.c src/sort_three.c src/sort.c src/cost.c
+src/rev_rotate_op.c src/sort_three.c src/sort.c src/cost.c \
+src/free.c src/error.c
 
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 HEADER = inc/push_swap.h inc/validation.h
@@ -29,7 +30,7 @@ BONUS = checker
 SRC_BONUS = src/checker_bonus.c src/validation.c src/parse.c \
 src/push_op.c src/rotate_op.c src/rev_rotate_op.c src/swap_op.c \
 src/sort_three.c src/utils.c src/ft_atol.c src/input_read_bonus.c \
-src/op_exec_bonus.c
+src/op_exec_bonus.c src/free.c src/error.c
 HEADER_BONUS = inc/checker_bonus.h
 
 OBJ_BONUS = $(SRC_BONUS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)

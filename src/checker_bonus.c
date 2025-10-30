@@ -6,30 +6,11 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:10:16 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/30 13:48:40 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/30 14:37:55 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "checker_bonus.h"
-
-static void	error(void)
-{
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(1);
-}
-
-void	free_stack(t_list *stack)
-{
-	t_list	*tmp;
-
-	ft_lstiter(stack, free);
-	while(stack)
-	{
-		tmp = stack;
-		stack = stack->next;
-		free(tmp);
-	}
-}
+#include "checker_bonus.h"
 
 int	main(int argc, char **argv)
 {
@@ -51,6 +32,7 @@ int	main(int argc, char **argv)
 		else
 			ft_printf("KO\n");
 		free_stack(stack_a);
+		free_matrix(commands);
 	}
 	return (0);
 }

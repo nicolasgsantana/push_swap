@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 16:04:14 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/30 14:03:42 by nde-sant         ###   ########.fr       */
+/*   Created: 2025/10/30 13:55:41 by nde-sant          #+#    #+#             */
+/*   Updated: 2025/10/30 13:56:46 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	error(void)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
-
-	stack_a = NULL;
-	stack_b = NULL;
-	if (argc >= 2)
-	{
-		if (!is_input_valid(argc, argv))
-			error();
-		init_stack(argc, argv, &stack_a);
-		if (!is_sorted(stack_a))
-			sort(&stack_a, &stack_b);
-		free_stack(stack_a);
-	}
-	return (0);
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit (1);
 }

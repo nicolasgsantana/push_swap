@@ -6,19 +6,19 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:55:40 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/30 11:06:50 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/10/30 14:37:31 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-static void	error(void)
+static void	free_and_exit_error(char *input)
 {
-	ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(1);
+	free(input);
+	error();
 }
 
-int is_op_valid(char *input)
+int	is_op_valid(char *input)
 {
 	if (ft_strlen(input) == 4)
 	{
@@ -79,12 +79,9 @@ char	**read_input(void)
 		free(tmp);
 		if (c == '\n')
 			if (!is_command_valid(input))
-			{
-				free(input);
-				error();
-			}
+				free_and_exit_error(input);
 	}
 	commands = ft_split(input, '\n');
 	free(input);
-	return (commands);	
+	return (commands);
 }
