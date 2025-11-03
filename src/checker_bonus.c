@@ -6,7 +6,7 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 15:10:16 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/30 14:37:55 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/11/03 12:15:20 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 		else
 			ft_printf("KO\n");
 		free_stack(stack_a);
+		free_stack(stack_b);
 		free_matrix(commands);
 	}
 	return (0);
