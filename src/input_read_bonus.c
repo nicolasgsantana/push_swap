@@ -6,16 +6,16 @@
 /*   By: nde-sant <nde-sant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:55:40 by nde-sant          #+#    #+#             */
-/*   Updated: 2025/10/30 14:37:31 by nde-sant         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:52:13 by nde-sant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker_bonus.h"
 
-static void	free_and_exit_error(char *input)
+static void	*free_and_return_null(char *input)
 {
 	free(input);
-	error();
+	return (NULL);
 }
 
 int	is_op_valid(char *input)
@@ -79,7 +79,7 @@ char	**read_input(void)
 		free(tmp);
 		if (c == '\n')
 			if (!is_command_valid(input))
-				free_and_exit_error(input);
+				return (free_and_return_null(input));
 	}
 	commands = ft_split(input, '\n');
 	free(input);
